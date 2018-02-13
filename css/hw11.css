@@ -1,0 +1,46 @@
+/************************************************
+ homework 11 styles
+************************************************/
+
+
+* {
+	font-family: "Times New Roman", Times, serif;
+}
+
+body {background-color: rgba(247,225,205,0.75);}
+
+.convert-temp-container {margin: 10px auto;}
+
+.header {
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding: 10px;
+	background-color: #999999;
+}
+
+.main-heading {
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+h1 {font-weight: bold;
+	text-align: center;
+}
+
+button { margin-right: 40px;}
+
+#goodbye {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+    margin: 50px;
+}
+
+.msg-info {
+    background-color: lightblue;
+}
+
+
+

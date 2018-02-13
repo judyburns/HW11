@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/hw11.css" type="text/css">
+</head>
+<body>
+	<div class="container-fluid h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-xs-12 text-centered header">
+				<h1 class="main-heading">Celsius to Fahrenheit Converter</h1>
+			</div> <!-- end col -->
+		</div> <!-- end row -->
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-xs-12" conv-temp-container>
+				<p>
+					<div>
+                        <label>Temperature:&nbsp; &nbsp; <input id="user-input" type="text" name="temperature" size="10" placeholder="Enter temperature">&nbsp; &nbsp;</label>
+						<input id="msg" type="text" name="message" size="25" readonly><br />
+						<hr />
+					</div>
+                    <div>
+                        <label>Convert To:&nbsp; &nbsp;<input id="celsius" type="radio" name="temptype" checked>Celsius &nbsp; </label>
+                        <input id="fahrenheit" type="radio" name="temptype">Fahrenheit<br /><br />
+                        Result: Celsius &nbsp; = &nbsp; <input id="conv-celsius" type="text" name="convtemp" size="5" readonly> &nbsp; Fahrenheit &nbsp; = &nbsp; <input id="conv-fahrenheit" type="text" name="convtemp" readonly size="5">
+                        <hr />
+                    </div>
+					<div>
+                        <button id="convert-button">Convert</button>
+						<button id="try-button">Try Again</button>
+						<button id="exit-button">Exit</button>
+					</div>
+				</p>
+                <p id="goodbye"></p>
+			</div> <!-- end col -->
+		</div> <!-- end row -->	
+	</div> <!-- end container -->
+	<script src="js/convertTemperature.js"></script>
+</body>
+</html>
