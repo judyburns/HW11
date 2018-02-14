@@ -29,45 +29,67 @@ $(document).ready(function () {
 
 function convertSelected() {
     $("#msg").val("").removeClass("msg-info");
-    var $inputvalue = $("#user-input").val();
+    var $inputValue = $("#user-input").val();
 
     try {
-        validateInput($inputvalue);
+        validateInput($inputValue);
+        if ($("#celsius:checked").val())
+            convertToCelsius($inputValue);
+        else
+            convertToFahrenheit($inputValue);
     }
     catch (error) {
         $("#msg").val(error).addClass("msg-info");
         return;
     }
-
-    if ($("#celsius:checked").val()) {
-        var fahrenheit = $("#user-input").val();
-        // convert from fahrenheit to celsius
-        var celsius = ((fahrenheit - 32) * (5 / 9));
-        var intCels = parseInt(celsius);
-        // populate input fields
-        $("#conv-celsius").val(intCels);
-        $("#conv-fahrenheit").val(fahrenheit);
-    }
-    else {
-        var celsius = $("#user-input").val();
-        //convert from celsius to fahrenheit
-        var fahrenheit = (celsius * (9 / 5) + 32);
-        var intFahr = parseInt(fahrenheit);
-        // populate input fields
-        $("#conv-fahrenheit").val(intFahr);
-        $("#conv-celsius").val(celsius);
-    }
 }
 
 
-function validateInput(inputvalue) {
+function validateInput(inputValue) {
     try {
-        if (isNaN(inputvalue)) throw "Enter a Number";
+        if (isNaN(inputValue)) throw "Enter a Number";
     } 
     catch (error) {
         throw error;
     }
 }
+
+function convertToFahrenheit(inputValue) {
+    try {
+        var celsius = $("#user-input").val();
+        //convert from celsius to fahrenheit
+        var fahrenheit = (celsius * (9 / 5) + 32);
+        if (isNaN(fahrenheit))
+            throw "Fahrenheit Conversion Error";
+    }
+    catch (error) {
+        throw error;
+    }
+    var intFahr = parseInt(fahrenheit);
+    // populate input fields
+    $("#conv-fahrenheit").val(intFahr);
+    $("#conv-celsius").val(celsius);
+}
+
+
+function convertToCelsius(inputValue) {
+    try {
+        var fahrenheit = $("#user-input").val();
+        // convert from fahrenheit to celsius
+        var celsius = ((fahrenheit - 32) * (5 / 9));
+        if (isNaN(celsius))
+            throw "Celsius Conversion Error";
+    }
+    catch (error) {
+        throw error;
+    }
+    var intCels = parseInt(celsius);
+    // populate input fields
+    $("#conv-celsius").val(intCels);
+    $("#conv-fahrenheit").val(fahrenheit);
+}
+
+
 
 function tryAgainSelected() {
     $("#user-input").val("");
